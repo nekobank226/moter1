@@ -1,0 +1,9 @@
+参考にしたもの
+サーボドライバー「PCA9685」を使って、複数の小型サーボ（SG90等）をRaspberry Piで動かす方法
+https://www.handsonplus.com/electronic-works/how-to-use-pca9685-with-raspi/
+
+Pololu 4.4:1 金属ギヤードモータ 25Dx63L mm HP 12V 48CPRエンコーダ付き :Pololu-4841:朱雀技研工房ストア - 通販 - Yahoo!ショッピング
+https://store.shopping.yahoo.co.jp/suzakulab/pololu-4841.html
+
+Pololu-VNH5019ボード＋Arduinoでモーター制御 : Yunit tech blog
+http://yunit.techblog.jp/archives/57578349.html
