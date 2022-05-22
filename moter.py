@@ -22,7 +22,6 @@ def moterspeed(v):
         pi.write(14,1)
         pi.write(15,0)
         a= v*40
-        int(a)
         PCA9685.set_pwm(0,0,a)
 
     #半時計周り
@@ -32,7 +31,6 @@ def moterspeed(v):
         pi.write(15,1)
         v = -1*v
         a =v*40
-        int(a)
         PCA9685.set_pwm(0,0,a)
 
     #vの値が大きい時
