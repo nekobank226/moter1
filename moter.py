@@ -15,8 +15,12 @@ PCA9685 = Adafruit_PCA9685.PCA9685()
 PCA9685.set_pwm_freq(SET_FREQ)
 
 
-def motor_speed(v):
-    # モータの回転速度を引数にする関数
+def motor_speed(v: float):
+    """Duty_circleを引数にとりモータを回転させる関数
+
+    Args:
+        v (float): Duty比 (-100 ~ 100 %)
+    """
 
     # 時計回り
     if(v > 0 and v <= 100):
