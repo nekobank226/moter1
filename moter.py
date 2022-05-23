@@ -15,32 +15,32 @@ PCA9685 = Adafruit_PCA9685.PCA9685()
 PCA9685.set_pwm_freq(SET_FREQ)
 
 
-def motor_speed(v: float):
-    """Duty_circleを引数にとりモータを回転させる関数
+def motor_speed(power: float):
+    """powerを引数にとりモータを回転させる関数
 
     Args:
-        v (float): Duty比 (-100 ~ 100 %)
+        power (float): Duty比 (-100 ~ 100 %)
     """
 
     # 時計回り
-    if(v > 0 and v <= 100):
+    if(power > 0 and power <= 100):
         print("回転開始")
         pi.write(14, 1)
         pi.write(15, 0)
-        a = v * 40
-        PCA9685.set_pwm(0, 0, a)
+        duty_cycle = power * 40
+        PCA9685.set_pwm(0, 0, duty_cycle)
 
     # 半時計周り
-    elif(v < 0 and v > -100):
+    elif(power < 0 and power > -100):
         print("逆回転開始")
         pi.write(14, 0)
         pi.write(15, 1)
-        v = -1 * v
-        a = v * 40
-        PCA9685.set_pwm(0, 0, a)
+        power = -1 * power
+        duty_cycle = power * 40
+        PCA9685.set_pwm(0, 0, duty_cycle)
 
     # vの値が大きい時
-    elif(v > 100 and v < -100):
+    elif(power > 100 and power < -100):
         pi.write(14, 0)
         pi.write(15, 0)
         PCA9685.set_pwm(0, 0, 0)
