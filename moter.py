@@ -15,7 +15,7 @@ PCA9685 = Adafruit_PCA9685.PCA9685()
 PCA9685.set_pwm_freq(SET_FREQ)
 
 
-def moter_speed(v):
+def motor_speed(v):
     # モータの回転速度を引数にする関数
 
     # 時計回り
@@ -42,11 +42,11 @@ def moter_speed(v):
         PCA9685.set_pwm(0, 0, 0)
 
 
-moter_speed(50)
+motor_speed(50)
 time.sleep(3)
-moter_speed(-50)
+motor_speed(-50)
 time.sleep(3)
-moter_speed(25)
+motor_speed(25)
 time.sleep(3)
 print("終了")
 PCA9685.set_pwm(0, 0, 0)
