@@ -50,11 +50,17 @@ def motor_speed(v: float):
         pi.write(15, 0)
         PCA9685.set_pwm(0, 0, 0)
 
-motor_speed(50)
-time.sleep(3)
-motor_speed(-50)
-time.sleep(3)
-motor_speed(25)
-time.sleep(3)
-print("終了")
-PCA9685.set_pwm(0, 0, 0)
+
+def motor_test():
+    motor_speed(50)
+    time.sleep(3)
+    motor_speed(-50)
+    time.sleep(3)
+    motor_speed(25)
+    time.sleep(3)
+    print("終了")
+    PCA9685.set_pwm(0, 0, 0)
+
+
+if __name__ == "__main__":
+    motor_test()
