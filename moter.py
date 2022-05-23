@@ -22,12 +22,13 @@ def motor_speed(power: float):
         power (float): Duty比 (-100 ~ 100 %)
     """
 
+    duty_cycle = int(power * 4095 / 100)
+
     # 時計回り
     if(power > 0 and power <= 100):
         print("回転開始")
         pi.write(14, 1)
         pi.write(15, 0)
-        duty_cycle = power * 40
         PCA9685.set_pwm(0, 0, duty_cycle)
 
     # 半時計周り
@@ -36,7 +37,6 @@ def motor_speed(power: float):
         pi.write(14, 0)
         pi.write(15, 1)
         power = -1 * power
-        duty_cycle = power * 40
         PCA9685.set_pwm(0, 0, duty_cycle)
 
     # vの値が大きい時
