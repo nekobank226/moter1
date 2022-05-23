@@ -45,6 +45,10 @@ def motor_speed(v: float):
         pi.write(15, 0)
         PCA9685.set_pwm(0, 0, 0)
 
+    else:
+        pi.write(14, 0)
+        pi.write(15, 0)
+        PCA9685.set_pwm(0, 0, 0)
 
 motor_speed(50)
 time.sleep(3)
